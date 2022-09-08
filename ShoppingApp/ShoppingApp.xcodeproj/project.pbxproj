@@ -106,6 +106,8 @@
 		9AC0E36528CA55340071AC71 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9AC0E37328CA57960071AC71 /* WishList */,
+				9AC0E37128CA577F0071AC71 /* Home */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -132,6 +134,60 @@
 				9AC0E36B28CA55BF0071AC71 /* ProductListModel.swift */,
 			);
 			path = ProductList;
+			sourceTree = "<group>";
+		};
+		9AC0E36F28CA575A0071AC71 /* ProductListScence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductListScence;
+			sourceTree = "<group>";
+		};
+		9AC0E37028CA57690071AC71 /* ProductDetailScence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProductDetailScence;
+			sourceTree = "<group>";
+		};
+		9AC0E37128CA577F0071AC71 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9AC0E37228CA57870071AC71 /* Scenes */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9AC0E37228CA57870071AC71 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9AC0E37028CA57690071AC71 /* ProductDetailScence */,
+				9AC0E36F28CA575A0071AC71 /* ProductListScence */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		9AC0E37328CA57960071AC71 /* WishList */ = {
+			isa = PBXGroup;
+			children = (
+				9AC0E37428CA579C0071AC71 /* Scenes */,
+			);
+			path = WishList;
+			sourceTree = "<group>";
+		};
+		9AC0E37428CA579C0071AC71 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9AC0E37528CA57A60071AC71 /* WIshListScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		9AC0E37528CA57A60071AC71 /* WIshListScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WIshListScene;
 			sourceTree = "<group>";
 		};
 		9AC120FB28C9C46300075625 = {
