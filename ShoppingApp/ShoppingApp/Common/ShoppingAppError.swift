@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum  ShoppingAppError: Error {
+public enum ShoppingAppError: Error {
     case NotFound
     case WrongData
     case InternalServerError
