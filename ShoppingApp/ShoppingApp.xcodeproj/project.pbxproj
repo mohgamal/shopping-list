@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9AC0E36A28CA557E0071AC71 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0E36928CA557E0071AC71 /* ProductModel.swift */; };
 		9AC0E36C28CA55BF0071AC71 /* ProductListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0E36B28CA55BF0071AC71 /* ProductListModel.swift */; };
+		9AC0E36E28CA56DA0071AC71 /* ShoppingAppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0E36D28CA56DA0071AC71 /* ShoppingAppError.swift */; };
 		9AC1210828C9C46300075625 /* ShoppingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1210728C9C46300075625 /* ShoppingAppApp.swift */; };
 		9AC1210A28C9C46300075625 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1210928C9C46300075625 /* ContentView.swift */; };
 		9AC1210C28C9C46400075625 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AC1210B28C9C46400075625 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		9AC0E36928CA557E0071AC71 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		9AC0E36B28CA55BF0071AC71 /* ProductListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListModel.swift; sourceTree = "<group>"; };
+		9AC0E36D28CA56DA0071AC71 /* ShoppingAppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppError.swift; sourceTree = "<group>"; };
 		9AC1210428C9C46300075625 /* ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC1210728C9C46300075625 /* ShoppingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppApp.swift; sourceTree = "<group>"; };
 		9AC1210928C9C46300075625 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		9AC0E36628CA553F0071AC71 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9AC0E36D28CA56DA0071AC71 /* ShoppingAppError.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC0E36E28CA56DA0071AC71 /* ShoppingAppError.swift in Sources */,
 				9AC1210A28C9C46300075625 /* ContentView.swift in Sources */,
 				9AC0E36A28CA557E0071AC71 /* ProductModel.swift in Sources */,
 				9AC1210828C9C46300075625 /* ShoppingAppApp.swift in Sources */,
