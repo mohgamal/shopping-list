@@ -21,7 +21,7 @@ struct ProductImageView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             TagsView(product: product, viewType: viewType)
-            
+                .frame(maxWidth: .infinity, alignment: .topLeading)
             if let uiImage = UIImage(data: imageLoader.data) {
                 AnyView(Image(uiImage: uiImage)
                     .resizable()

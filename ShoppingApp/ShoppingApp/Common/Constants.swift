@@ -32,7 +32,7 @@ struct FontStyleConstants {
             case .cell:
                 return 12
             case .details:
-                return 24
+                return 20
             }
         }
     }

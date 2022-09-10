@@ -47,6 +47,7 @@ struct ProductDetailsView: View {
                 .foregroundColor(.black)
             }
         }
+        .padding()
         .onAppear(perform: {
             checkIsAddedToWIshList()
         })
