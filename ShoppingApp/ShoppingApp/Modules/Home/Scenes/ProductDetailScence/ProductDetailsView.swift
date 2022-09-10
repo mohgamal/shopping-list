@@ -14,7 +14,6 @@ struct ProductDetailsView: View {
 
     let product: ProductModel
     let currency: String
-    @State var isSelected : Bool = false
 
 
     init(vm: ProductDetailsViewModel, product: ProductModel, currency: String) {
@@ -45,27 +44,20 @@ struct ProductDetailsView: View {
             .navigationBarItems(leading: btnBack)
             .toolbar {
                 Button(action: {
-                    self.isSelected.toggle()
-                    WishListManager().add(product: product)
-                    checkIsAddedToWIshList()
+                    vm.isAddedToWishList.toggle()
+                    vm.wishListManager.add(product: product)
+                    vm.checkIsAddedToWIshList(itemId: self.product.id ?? "")
                 }, label: {
-                    Image(systemName: self.isSelected ? "bookmark.fill": "bookmark")
+                    Image(systemName: vm.isAddedToWishList ? "bookmark.fill": "bookmark")
                 })
                 .foregroundColor(.black)
             }
         }
         .padding()
         .onAppear(perform: {
-            checkIsAddedToWIshList()
+            vm.checkIsAddedToWIshList(itemId: self.product.id ?? "")
         })
         .frame(maxWidth: .infinity)
-    }
-
-    @discardableResult
-    private func checkIsAddedToWIshList() -> Bool {
-        let status = WishListManager().checkStatus(id: self.product.id ?? "")
-        self.isSelected = status
-        return status
     }
 }
 

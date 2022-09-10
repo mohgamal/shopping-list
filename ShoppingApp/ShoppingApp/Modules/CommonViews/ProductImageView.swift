@@ -17,7 +17,7 @@ struct ProductImageView: View {
         self.product = product
         self.viewType = viewType
         self.wishListManager = wishListManager
-        imageLoader = DataLoader(resourseURL: URL(string:self.product.image ?? ""))
+        imageLoader = DataLoader(resourseURL: URL(string: product.image ?? ""))
     }
 
     var body: some View {

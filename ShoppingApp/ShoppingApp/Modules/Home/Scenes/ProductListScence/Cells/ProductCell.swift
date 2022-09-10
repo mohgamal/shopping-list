@@ -13,6 +13,7 @@ struct ProductCell: View {
     let viewType: ViewType
     let wishListManager: WishListManager
     let cartManager: CartManager
+    @State var isAddedToCart : Bool = false
 
     init (item: ProductModel,
           currency: String,
@@ -78,6 +79,7 @@ struct ProductCell: View {
             if viewType == .details {
                 Button(action:  {
                     self.cartManager.add(product: self.item)
+                    checkIsAddedToCart()
                 })  {
                     Text("ADD TO BAG")
                         .fontWeight(.semibold)
@@ -85,12 +87,21 @@ struct ProductCell: View {
                         .foregroundColor(.white)
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .border(Color.black)
-                        .background(Color.black)
+                        .background(self.isAddedToCart  ? Color.gray : Color.black)
                         .cornerRadius(5)
                         .padding()
                 }
+                .disabled(self.isAddedToCart)
             }
-        }
+        } .onAppear(perform:  {
+            checkIsAddedToCart()
+        })
+    }
+
+    @discardableResult
+    private func checkIsAddedToCart() -> Bool {
+        let status = cartManager.checkStatus(id: self.item.id ?? "")
+        self.isAddedToCart = status
+        return status
     }
 }
