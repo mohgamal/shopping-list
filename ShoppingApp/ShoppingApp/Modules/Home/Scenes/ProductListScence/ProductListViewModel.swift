@@ -11,11 +11,17 @@ class ProductListViewModel: ObservableObject {
     @Published var loading = true
     @Published var productResult: ProductListModel?
     let prouctListService: ProductListServiceInterface
+    let wishListManager: WishListManager
+    let cartManager: CartManager
 
     var error: Error?
 
-    init (productListService: ProductListServiceInterface) {
+    init (productListService: ProductListServiceInterface,
+          wishListManager: WishListManager,
+          cartManager: CartManager) {
         self.prouctListService = productListService
+        self.wishListManager = wishListManager
+        self.cartManager = cartManager
     }
     
     func getData() {

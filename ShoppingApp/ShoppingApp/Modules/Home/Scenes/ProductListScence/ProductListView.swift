@@ -30,8 +30,12 @@ struct ProductListView: View {
                 } else {
                     LazyVGrid(columns:  columns, spacing: 20) {
                         ForEach(vm.productResult?.items ?? [], id: \.id) { item in
-                            NavigationLink(destination: ProductDetailsView(product: item, currency: vm.productResult?.currency ?? "")) {
-                                ProductCell(item: item, currency: vm.productResult?.currency ?? "", viewType: .cell)
+                            NavigationLink(destination: ProductDetailsView(vm: appDI.productDetailsDependecies(), product: item, currency: vm.productResult?.currency ?? "")) {
+                                ProductCell(item: item,
+                                            currency: vm.productResult?.currency ?? "",
+                                            viewType: .cell,
+                                            wishListManager: vm.wishListManager,
+                                            cartManager: vm.cartManager)
                                     .frame(height: 350)
                             }
                         }

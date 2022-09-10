@@ -11,16 +11,24 @@ struct ProductCell: View {
     var item: ProductModel
     var currency: String
     let viewType: ViewType
+    let wishListManager: WishListManager
+    let cartManager: CartManager
 
-    init (item: ProductModel, currency: String, viewType: ViewType) {
+    init (item: ProductModel,
+          currency: String,
+          viewType: ViewType,
+          wishListManager: WishListManager,
+          cartManager: CartManager) {
         self.item = item
         self.currency = currency
         self.viewType = viewType
+        self.wishListManager = wishListManager
+        self.cartManager = cartManager
     }
 
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
-            ProductImageView(product: self.item, viewType: viewType)
+            ProductImageView(product: self.item, viewType: viewType, wishListManager: wishListManager)
             VStack(alignment: .center, spacing: 10) {
                 Text(self.item.brand ?? "")
                     .multilineTextAlignment(.leading)
@@ -69,7 +77,7 @@ struct ProductCell: View {
 
             if viewType == .details {
                 Button(action:  {
-
+                    self.cartManager.add(product: self.item)
                 })  {
                     Text("ADD TO BAG")
                         .fontWeight(.semibold)

@@ -10,12 +10,15 @@ import SwiftUI
 
 struct ProductDetailsView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @ObservedObject public var vm: ProductDetailsViewModel
+
     let product: ProductModel
     let currency: String
     @State var isSelected : Bool = false
 
 
-    init(product: ProductModel, currency: String) {
+    init(vm: ProductDetailsViewModel, product: ProductModel, currency: String) {
+        self.vm = vm
         self.product = product
         self.currency = currency
     }
@@ -33,13 +36,17 @@ struct ProductDetailsView: View {
 
     var body: some View {
         ScrollView {
-        ProductCell(item: product, currency: currency, viewType: .details)
+            ProductCell(item: product,
+                        currency: currency,
+                        viewType: .details,
+                        wishListManager: vm.wishListManager,
+                        cartManager: vm.cartManager)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: btnBack)
             .toolbar {
                 Button(action: {
                     self.isSelected.toggle()
-                    Utils.addToWishList(item: product)
+                    WishListManager().add(product: product)
                     checkIsAddedToWIshList()
                 }, label: {
                     Image(systemName: self.isSelected ? "bookmark.fill": "bookmark")
@@ -56,7 +63,7 @@ struct ProductDetailsView: View {
 
     @discardableResult
     private func checkIsAddedToWIshList() -> Bool {
-        let status = Utils.checkItemStatus(itemId: self.product.id ?? "")
+        let status = WishListManager().checkStatus(id: self.product.id ?? "")
         self.isSelected = status
         return status
     }

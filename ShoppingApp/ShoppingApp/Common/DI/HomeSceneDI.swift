@@ -7,7 +7,8 @@
 
 import Foundation
 
-class HomeSceneDI: AppDIInterface {
+class HomeSceneDI {
+
     let appEnvironment: AppEnvironment
 
     init (appEnvironment: AppEnvironment) {
@@ -17,7 +18,11 @@ class HomeSceneDI: AppDIInterface {
     func productListDependecies() -> ProductListViewModel {
         let serviceURL = appEnvironment.baseURL
         let productListService = ProductListService(urlString: serviceURL)
-        let productListVM = ProductListViewModel(productListService: productListService)
+        let wishListManager = WishListManager()
+        let cartManager = CartManager()
+        let productListVM = ProductListViewModel(productListService: productListService,
+                                                 wishListManager: wishListManager,
+                                                 cartManager: cartManager)
         return productListVM
     }
 }

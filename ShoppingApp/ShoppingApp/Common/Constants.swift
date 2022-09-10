@@ -50,5 +50,6 @@ struct FontStyleConstants {
 }
 
 struct UserDefaultKeys {
-    static let wishList = "wishListKey"
+    static let wishList = "wish-list"
+    static let cart = "cart-list"
 }

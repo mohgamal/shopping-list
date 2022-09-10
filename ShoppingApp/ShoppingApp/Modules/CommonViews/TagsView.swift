@@ -10,12 +10,14 @@ import SwiftUI
 struct TagsView: View {
     let product: ProductModel
     let viewType: ViewType
+    let wishListManager: WishListManager
 
     @State var isSelected : Bool = false
     
-    init (product: ProductModel, viewType: ViewType) {
+    init (product: ProductModel, viewType: ViewType, wishListManager: WishListManager) {
         self.product = product
         self.viewType = viewType
+        self.wishListManager = wishListManager
     }
     
     var body: some View {
@@ -36,7 +38,7 @@ struct TagsView: View {
                 HStack{
                     Button(action: {
                         self.isSelected.toggle()
-                        Utils.addToWishList(item: product)
+                        wishListManager.add(product: product)
                         checkIsAddedToWIshList()
                     }, label: {
                         Image(systemName: self.isSelected ? "bookmark.fill" : "bookmark")
@@ -60,7 +62,7 @@ struct TagsView: View {
 
     @discardableResult
     private func checkIsAddedToWIshList() -> Bool {
-        let status = Utils.checkItemStatus(itemId: self.product.id ?? "")
+        let status = wishListManager.checkStatus(id: self.product.id ?? "")
         self.isSelected = status
         return status
     }
