@@ -26,9 +26,11 @@ struct ProductDetailsView: View {
            self.presentationMode.wrappedValue.dismiss()
            }) {
                HStack {
-               Image(systemName: "arrow.left") // set image here
+               Image(systemName: "arrow.left")
+                    .resizable()
                    .aspectRatio(contentMode: .fit)
                    .foregroundColor(.black)
+                   .frame(width: 25, height: 25)
                }
            }
        }
@@ -65,6 +67,8 @@ struct ProductDetailsView: View {
                     vm.checkIsAddedToWishList(itemId: self.product.id ?? "")
                 }, label: {
                     Image(systemName: vm.isAddedToWishList ? "bookmark.fill": "bookmark")
+                        .resizable()
+                        .frame(width: 30, height: 30)
                 })
                 .foregroundColor(.black)
             }

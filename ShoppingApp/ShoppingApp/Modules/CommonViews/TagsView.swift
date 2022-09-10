@@ -42,6 +42,8 @@ struct TagsView: View {
                         checkIsAddedToWIshList()
                     }, label: {
                         Image(systemName: self.isSelected ? "bookmark.fill" : "bookmark")
+                            .resizable()
+                            .frame(width: 25, height: 25)
                     })
                     .foregroundColor(.black)
                     .alignmentGuide(.trailing) { d in d[.trailing] }

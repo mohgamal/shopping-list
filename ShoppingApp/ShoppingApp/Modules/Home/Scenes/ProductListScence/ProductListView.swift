@@ -11,16 +11,17 @@ import SwiftUI
 struct ProductListView: View {
     var appDI: AppDIInterface
     @ObservedObject public var vm: ProductListViewModel
-   
+    @State private var isPresented = false
+
     init (appDI: AppDIInterface, vm: ProductListViewModel) {
         self.appDI = appDI
         self.vm = vm
     }
 
     let columns = [
-            GridItem(.flexible()),
-            GridItem(.flexible())
-            ]
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
 
     var body: some View {
         NavigationView {
@@ -36,23 +37,26 @@ struct ProductListView: View {
                                             viewType: .cell,
                                             wishListManager: vm.wishListManager,
                                             cartManager: vm.cartManager)
-                                    .frame(height: 350)
+                                .frame(height: 350)
                             }
                         }
                     }.padding()
-                    .toolbar {
+                        .toolbar {
+                            Button(action: {
+                                isPresented.toggle()
+                            }, label: {
+                                Image(systemName:  "bookmark")
+                                    .resizable()
+                                    .frame(width: 25, height:25)
+                            })
+                            .fullScreenCover(isPresented: $isPresented, content: WishListView.init)
 
-                        Button(action: {
-                            // Do something...
-                        }, label: {
-                            Image(systemName:  "bookmark")
+                            .foregroundColor(.black)
+                        }
+                        .navigationBarTitle(vm.productResult?.title ?? "", displayMode: .inline)
+                        .background(NavigationConfigurator { nc in
+                            nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black]
                         })
-                        .foregroundColor(.black)
-                    }
-                    .navigationBarTitle(vm.productResult?.title ?? "", displayMode: .inline)
-                    .background(NavigationConfigurator { nc in
-                                   nc.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black]
-                               })
                 }
             }
             .frame(maxWidth: .infinity)

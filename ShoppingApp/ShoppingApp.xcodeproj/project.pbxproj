@@ -38,6 +38,8 @@
 		9ACB809128CCFC1600BACCCB /* WishListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB809028CCFC1600BACCCB /* WishListManager.swift */; };
 		9ACB809328CCFD9600BACCCB /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB809228CCFD9600BACCCB /* CartManager.swift */; };
 		9ACB809528CCFE4400BACCCB /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB809428CCFE4400BACCCB /* ProductDetailsViewModel.swift */; };
+		9ACB809728CD0A6B00BACCCB /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB809628CD0A6B00BACCCB /* WishListView.swift */; };
+		9ACB809928CD0A7F00BACCCB /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACB809828CD0A7F00BACCCB /* WishListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,8 @@
 		9ACB809028CCFC1600BACCCB /* WishListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListManager.swift; sourceTree = "<group>"; };
 		9ACB809228CCFD9600BACCCB /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 		9ACB809428CCFE4400BACCCB /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
+		9ACB809628CD0A6B00BACCCB /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
+		9ACB809828CD0A7F00BACCCB /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +247,8 @@
 		9AC0E37528CA57A60071AC71 /* WIshListScene */ = {
 			isa = PBXGroup;
 			children = (
+				9ACB809628CD0A6B00BACCCB /* WishListView.swift */,
+				9ACB809828CD0A7F00BACCCB /* WishListViewModel.swift */,
 			);
 			path = WIshListScene;
 			sourceTree = "<group>";
@@ -502,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ACB809928CD0A7F00BACCCB /* WishListViewModel.swift in Sources */,
 				9AC0E38328CA67A20071AC71 /* DataLoader.swift in Sources */,
 				9AC0E36E28CA56DA0071AC71 /* ShoppingAppError.swift in Sources */,
 				9ACB809528CCFE4400BACCCB /* ProductDetailsViewModel.swift in Sources */,
@@ -525,6 +532,7 @@
 				9ACB809128CCFC1600BACCCB /* WishListManager.swift in Sources */,
 				9AAA5CF028CCD20000C3ABF9 /* Utils.swift in Sources */,
 				9AC9E84728CC9FDE00EDF961 /* Constants.swift in Sources */,
+				9ACB809728CD0A6B00BACCCB /* WishListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
