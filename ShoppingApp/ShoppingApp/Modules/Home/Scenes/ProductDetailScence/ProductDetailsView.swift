@@ -10,6 +10,13 @@ import SwiftUI
 
 struct ProductDetailsView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    let product: ProductModel
+    let currency: String
+
+    init(product: ProductModel, currency: String) {
+        self.product = product
+        self.currency = currency
+    }
 
     var btnBack : some View { Button(action: {
            self.presentationMode.wrappedValue.dismiss()
@@ -23,8 +30,25 @@ struct ProductDetailsView: View {
        }
 
     var body: some View {
-        Text ("view")
+        ProductCell(item: product, currency: currency, viewType: .details)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: btnBack)
+            .toolbar {
+                Button(action: {
+                    // Do something...
+                }, label: {
+                    Image(systemName: "bookmark")
+                })
+                .foregroundColor(.black)
+            }
     }
+
+    private func addToWishList() {
+        
+    }
+}
+
+enum ViewType {
+    case cell
+    case details
 }

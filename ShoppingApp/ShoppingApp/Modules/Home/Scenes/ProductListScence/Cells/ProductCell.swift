@@ -10,66 +10,61 @@ import SwiftUI
 struct ProductCell: View {
     var item: ProductModel
     var currency: String
+    let viewType: ViewType
 
-    init (item: ProductModel, currency: String) {
+    init (item: ProductModel, currency: String, viewType: ViewType) {
         self.item = item
         self.currency = currency
+        self.viewType = viewType
     }
 
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
-            ProductImageView(tags: self.item.badges ?? [], imageURL: self.item.image ?? "")
+            ProductImageView(tags: self.item.badges ?? [], imageURL: self.item.image ?? "", viewType: viewType)
             VStack(alignment: .center, spacing: 10) {
                 Text(self.item.brand ?? "")
                     .multilineTextAlignment(.leading)
                     .font(.custom(
                         "Roboto-Bold",
-                        fixedSize: 14))
+                        fixedSize:  FontStyleConstants.init(viewType: viewType).body))
                     .foregroundColor(.black)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(maxWidth: .infinity, alignment: viewType == .cell ? .leading : .center)
 
                 Text(self.item.name ?? "")
                     .foregroundColor(.gray)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(maxWidth: .infinity, alignment: viewType == .cell ? .leading : .center)
                     .font(.custom(
                         "Roboto-Regular",
-                        fixedSize: 20))
+                        fixedSize: FontStyleConstants.init(viewType: viewType).title))
 
                 HStack {
                     if let originalPrice = self.item.originalPrice {
                         Text("\(self.item.price ?? 0) \(self.currency)")
                             .foregroundColor(.gray)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(maxWidth: .infinity, alignment: viewType == .cell ? .leading : .center)
                             .font(.custom(
                                 "Roboto-Regular",
-                                fixedSize: 14))
+                                fixedSize: FontStyleConstants.init(viewType: viewType).body))
                         Text("\(originalPrice) \(self.currency)")
                             .strikethrough()
                             .foregroundColor(.gray)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(maxWidth: .infinity, alignment: viewType == .cell ? .leading : .center)
                             .font(.custom(
                                 "Roboto-Regular",
-                                fixedSize: 14))
+                                fixedSize: FontStyleConstants.init(viewType: viewType).body))
 
                     } else {
                         Text("\(self.item.price ?? 0) \(self.currency)")
                             .foregroundColor(.gray)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(maxWidth: .infinity, alignment:viewType == .cell ? .leading : .center)
                             .font(.custom(
                                 "Roboto-Regular",
-                                fixedSize: 14))
+                                fixedSize: FontStyleConstants.init(viewType: viewType).body))
                     }
 
                 }
-
             }
-
+            .padding()
         }
-    }
-}
-
-struct ProductCell_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductCell(item: ProductModel(id: "1", sku: "11", image: "222", brand: "Name 222", name: "test", price: 100, originalPrice: nil, badges: ["test", "test2", "test3"]), currency: "AED")
     }
 }

@@ -11,29 +11,33 @@ struct ProductImageView: View {
     @ObservedObject private var imageLoader: DataLoader
     let tags: [String]
     let imageURL: String
+    let viewType: ViewType
 
-    init (tags: [String], imageURL: String) {
+    init (tags: [String], imageURL: String, viewType: ViewType) {
         self.tags = tags
         self.imageURL = imageURL
+        self.viewType = viewType
         imageLoader = DataLoader(resourseURL: URL(string:imageURL))
     }
 
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
-            TagsView(tags: tags)
+            TagsView(tags: tags, viewType: viewType)
             
             if let uiImage = UIImage(data: imageLoader.data) {
                 AnyView(Image(uiImage: uiImage)
                     .resizable()
-                    .frame(height: 150, alignment: .center)
+                    .aspectRatio(contentMode: .fit)
+                    .frame( alignment: .center)
                 )
+
                 .background(Color(UIColor.white))
             }
             else {
                 AnyView(Image(systemName: "camera")
                     .resizable()
-                    .scaledToFit()
-                    .frame(height: 150, alignment: .center)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(alignment: .center)
                     .onAppear(perform: { imageLoader.loadImage() }))
                 .background(Color(UIColor.white))
             }
