@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct ProductCell: View {
-    @ObservedObject private var imageLoader: DataLoader
     var item: ProductModel
     var currency: String
 
     init (item: ProductModel, currency: String) {
         self.item = item
         self.currency = currency
-        imageLoader = DataLoader(resourseURL: URL(string: item.image ?? ""))
     }
+
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
-            ProductImageView(imageLoader: self.imageLoader, tags: self.item.badges ?? [])
+            ProductImageView(tags: self.item.badges ?? [], imageURL: self.item.image ?? "")
             VStack(alignment: .center, spacing: 10) {
                 Text(self.item.brand ?? "")
                     .multilineTextAlignment(.leading)

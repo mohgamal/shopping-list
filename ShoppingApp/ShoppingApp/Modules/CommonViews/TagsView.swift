@@ -27,6 +27,14 @@ struct TagsView: View {
                         fixedSize: 12))
                     .frame(alignment: .leading)
             }
+
+            Button(action: {
+                // Do something...
+            }, label: {
+                Image(systemName: "bookmark")
+            })
+            .foregroundColor(.black)
+            .frame(alignment: .leading)
         }
         .frame(
             maxWidth: .infinity,

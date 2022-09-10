@@ -9,16 +9,19 @@ import SwiftUI
 
 struct ProductImageView: View {
     @ObservedObject private var imageLoader: DataLoader
-    var tags: [String]
+    let tags: [String]
+    let imageURL: String
 
-    init (imageLoader: DataLoader, tags: [String]) {
-        self.imageLoader = imageLoader
+    init (tags: [String], imageURL: String) {
         self.tags = tags
+        self.imageURL = imageURL
+        imageLoader = DataLoader(resourseURL: URL(string:imageURL))
     }
 
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             TagsView(tags: tags)
+            
             if let uiImage = UIImage(data: imageLoader.data) {
                 AnyView(Image(uiImage: uiImage)
                     .resizable()
