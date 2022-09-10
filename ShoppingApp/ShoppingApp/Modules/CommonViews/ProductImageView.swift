@@ -9,22 +9,18 @@ import SwiftUI
 
 struct ProductImageView: View {
     @ObservedObject private var imageLoader: DataLoader
-    let tags: [String]
-    let imageURL: String
+    let product: ProductModel
     let viewType: ViewType
-    let itemId: String
 
-    init (tags: [String], imageURL: String, viewType: ViewType, itemId: String) {
-        self.tags = tags
-        self.imageURL = imageURL
+    init (product: ProductModel, viewType: ViewType) {
+        self.product = product
         self.viewType = viewType
-        self.itemId = itemId
-        imageLoader = DataLoader(resourseURL: URL(string:imageURL))
+        imageLoader = DataLoader(resourseURL: URL(string:self.product.image ?? ""))
     }
 
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
-            TagsView(tags: tags, viewType: viewType, itemId: self.itemId)
+            TagsView(product: product, viewType: viewType)
             
             if let uiImage = UIImage(data: imageLoader.data) {
                 AnyView(Image(uiImage: uiImage)

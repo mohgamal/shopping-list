@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct TagsView: View {
-    let tags: [String]
+    let product: ProductModel
     let viewType: ViewType
-    let itemId: String
 
-    init (tags: [String], viewType: ViewType, itemId: String) {
-        self.tags = tags
+    @State var isSelected : Bool = false
+    
+    init (product: ProductModel, viewType: ViewType) {
+        self.product = product
         self.viewType = viewType
-        self.itemId = itemId
     }
+    
     var body: some View {
         HStack {
             HStack( spacing: 5.0) {
-                ForEach(tags ,id: \.self) { tag in
+                ForEach(product.badges ?? [] ,id: \.self) { tag in
                     Text(tag)
                         .font(.custom(
                             "Roboto-Regular",
@@ -34,9 +35,11 @@ struct TagsView: View {
             if viewType == .cell {
                 HStack{
                     Button(action: {
-                        // Do something...
+                        self.isSelected.toggle()
+                        Utils.addToWishList(item: product)
+                        checkIsAddedToWIshList()
                     }, label: {
-                        Image(systemName: Utils.checkItemStatus(itemId: self.itemId) ? "bookmark.fill" : "bookmark")
+                        Image(systemName: self.isSelected ? "bookmark.fill" : "bookmark")
                     })
                     .foregroundColor(.black)
                     .alignmentGuide(.trailing) { d in d[.trailing] }
@@ -46,9 +49,19 @@ struct TagsView: View {
                     maxHeight: 20,
                     alignment: .topTrailing
                 )
+                .onAppear(perform:  {
+                    checkIsAddedToWIshList()
+                })
                 .padding()
             }
 
         }
+    }
+
+    @discardableResult
+    private func checkIsAddedToWIshList() -> Bool {
+        let status = Utils.checkItemStatus(itemId: self.product.id ?? "")
+        self.isSelected = status
+        return status
     }
 }
