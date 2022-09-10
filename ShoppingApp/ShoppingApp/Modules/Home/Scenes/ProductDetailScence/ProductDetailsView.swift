@@ -40,13 +40,29 @@ struct ProductDetailsView: View {
                         viewType: .details,
                         wishListManager: vm.wishListManager,
                         cartManager: vm.cartManager)
+                Button(action:  {
+                    self.vm.isAddedToCart.toggle()
+                    self.vm.cartManager.add(product: self.product)
+                    self.vm.checkIsAddedToCart(itemId: self.product.id ?? "")
+                })  {
+                    Text("ADD TO BAG")
+                        .fontWeight(.semibold)
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background( self.vm.isAddedToCart ? Color.gray : Color.black)
+                        .cornerRadius(5)
+                        .padding()
+                }
+                .disabled(self.vm.isAddedToCart)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: btnBack)
             .toolbar {
                 Button(action: {
                     vm.isAddedToWishList.toggle()
                     vm.wishListManager.add(product: product)
-                    vm.checkIsAddedToWIshList(itemId: self.product.id ?? "")
+                    vm.checkIsAddedToWishList(itemId: self.product.id ?? "")
                 }, label: {
                     Image(systemName: vm.isAddedToWishList ? "bookmark.fill": "bookmark")
                 })
@@ -55,7 +71,8 @@ struct ProductDetailsView: View {
         }
         .padding()
         .onAppear(perform: {
-            vm.checkIsAddedToWIshList(itemId: self.product.id ?? "")
+            vm.checkIsAddedToWishList(itemId: self.product.id ?? "")
+            vm.checkIsAddedToCart(itemId: self.product.id ?? "")
         })
         .frame(maxWidth: .infinity)
     }

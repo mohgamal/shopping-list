@@ -11,6 +11,7 @@ class ProductDetailsViewModel: ObservableObject {
     let cartManager: CartManager
 
     @Published var isAddedToWishList: Bool = false
+    @Published var isAddedToCart: Bool = false
 
     init (wishListManager: WishListManager, cartManager: CartManager) {
         self.wishListManager = wishListManager
@@ -18,9 +19,16 @@ class ProductDetailsViewModel: ObservableObject {
     }
 
     @discardableResult
-    func checkIsAddedToWIshList(itemId: String) -> Bool {
-        let status = WishListManager().checkStatus(id: itemId)
+    func checkIsAddedToWishList(itemId: String) -> Bool {
+        let status = wishListManager.checkStatus(id: itemId)
         self.isAddedToWishList = status
+        return status
+    }
+
+    @discardableResult
+    func checkIsAddedToCart(itemId: String) -> Bool {
+        let status = cartManager.checkStatus(id: itemId)
+        self.isAddedToCart = status
         return status
     }
 }
