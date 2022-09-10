@@ -9,9 +9,11 @@ import Foundation
 import SwiftUI
 
 struct ProductListView: View {
+    var appDI: AppDIInterface
     @ObservedObject public var vm: ProductListViewModel
 
-    init (vm: ProductListViewModel) {
+    init (appDI: AppDIInterface, vm: ProductListViewModel) {
+        self.appDI = appDI
         self.vm = vm
     }
 
@@ -54,11 +56,5 @@ struct ProductListView: View {
         .onAppear {
             self.vm.getData()
         }
-    }
-}
-
-struct ProductListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductListView(vm: ProductListViewModel())
     }
 }

@@ -10,13 +10,17 @@ import Foundation
 class ProductListViewModel: ObservableObject {
     @Published var loading = true
     @Published var productResult: ProductListModel?
+    let prouctListService: ProductListServiceInterface
+
     var error: Error?
+
+    init (productListService: ProductListServiceInterface) {
+        self.prouctListService = productListService
+    }
     
     func getData() {
         self.loading = true
-        let service = ProductListService(urlString: "https://run.mocky.io/v3/5c138271-d8dd-4112-8fb4-3adb1b7f689e")
-        service.getProductList() { [weak self] result in
-
+        prouctListService.getProductList() { [weak self] result in
             DispatchQueue.main.async {
                 self?.loading = false
                 switch result {

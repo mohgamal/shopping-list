@@ -11,7 +11,10 @@ import SwiftUI
 struct ShoppingAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ProductListView(vm: ProductListViewModel())
+            let productListView = ProductListView(appDI: AppDI.shared,
+                                                  vm: AppDI.shared.productListDependecies())
+
+            productListView
         }
     }
 }

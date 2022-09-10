@@ -27,6 +27,9 @@
 		9AC1212528C9C46500075625 /* ShoppingAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1212428C9C46500075625 /* ShoppingAppUITestsLaunchTests.swift */; };
 		9AC9E83828CC7A1F00EDF961 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9E83728CC7A1F00EDF961 /* TagsView.swift */; };
 		9AC9E83A28CC7A3700EDF961 /* ProductImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9E83928CC7A3700EDF961 /* ProductImageView.swift */; };
+		9AC9E83C28CC7C0900EDF961 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9E83B28CC7C0900EDF961 /* AppEnvironment.swift */; };
+		9AC9E83F28CC7C1D00EDF961 /* HomeSceneDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9E83E28CC7C1D00EDF961 /* HomeSceneDI.swift */; };
+		9AC9E84128CC7DA400EDF961 /* AppDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9E84028CC7DA400EDF961 /* AppDI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		9AC1213128C9C47700075625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AC9E83728CC7A1F00EDF961 /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 		9AC9E83928CC7A3700EDF961 /* ProductImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageView.swift; sourceTree = "<group>"; };
+		9AC9E83B28CC7C0900EDF961 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		9AC9E83E28CC7C1D00EDF961 /* HomeSceneDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneDI.swift; sourceTree = "<group>"; };
+		9AC9E84028CC7DA400EDF961 /* AppDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,9 +143,11 @@
 		9AC0E36628CA553F0071AC71 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9AC9E83D28CC7C0D00EDF961 /* DI */,
 				9AC0E36D28CA56DA0071AC71 /* ShoppingAppError.swift */,
 				9AC0E37B28CA60840071AC71 /* NavigationBarConfigurator.swift */,
 				9AC0E38228CA67A20071AC71 /* DataLoader.swift */,
+				9AC9E83B28CC7C0900EDF961 /* AppEnvironment.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -320,6 +328,15 @@
 			path = CommonViews;
 			sourceTree = "<group>";
 		};
+		9AC9E83D28CC7C0D00EDF961 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				9AC9E83E28CC7C1D00EDF961 /* HomeSceneDI.swift */,
+				9AC9E84028CC7DA400EDF961 /* AppDI.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -459,10 +476,13 @@
 				9AC0E36A28CA557E0071AC71 /* ProductModel.swift in Sources */,
 				9AC0E37A28CA59AC0071AC71 /* ProductListViewModel.swift in Sources */,
 				9AC0E37828CA58300071AC71 /* ProductListService.swift in Sources */,
+				9AC9E83F28CC7C1D00EDF961 /* HomeSceneDI.swift in Sources */,
 				9AC0E37E28CA60A40071AC71 /* ProductListView.swift in Sources */,
 				9AC0E38128CA62CB0071AC71 /* ProductCell.swift in Sources */,
+				9AC9E83C28CC7C0900EDF961 /* AppEnvironment.swift in Sources */,
 				9AC9E83A28CC7A3700EDF961 /* ProductImageView.swift in Sources */,
 				9AC1210828C9C46300075625 /* ShoppingAppApp.swift in Sources */,
+				9AC9E84128CC7DA400EDF961 /* AppDI.swift in Sources */,
 				9AC9E83828CC7A1F00EDF961 /* TagsView.swift in Sources */,
 				9AC0E36C28CA55BF0071AC71 /* ProductListModel.swift in Sources */,
 			);
