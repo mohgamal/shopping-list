@@ -32,6 +32,7 @@ struct ProductCell: View {
 
                 Text(self.item.name ?? "")
                     .foregroundColor(.gray)
+                    .lineLimit(2)
                     .frame(maxWidth: .infinity, alignment: viewType == .cell ? .leading : .center)
                     .font(.custom(
                         "Roboto-Regular",

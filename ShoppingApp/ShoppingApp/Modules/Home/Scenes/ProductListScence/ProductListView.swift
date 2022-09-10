@@ -32,6 +32,7 @@ struct ProductListView: View {
                         ForEach(vm.productResult?.items ?? [], id: \.id) { item in
                             NavigationLink(destination: ProductDetailsView(product: item, currency: vm.productResult?.currency ?? "")) {
                                 ProductCell(item: item, currency: vm.productResult?.currency ?? "", viewType: .cell)
+                                    .frame(height: 350)
                             }
                         }
                     }.padding()
