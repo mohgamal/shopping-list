@@ -25,8 +25,8 @@ struct ProductListView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                if vm.error != nil {
-
+                if let error = vm.error {
+                    ErrorView(error: error.localizedDescription, f: self.reloadData)
                 } else {
                     LazyVGrid(columns:  columns, spacing: 20) {
                         ForEach(vm.productResult?.items ?? [], id: \.id) { item in
@@ -56,5 +56,10 @@ struct ProductListView: View {
         .onAppear {
             self.vm.getData()
         }
+    }
+
+    func reloadData() {
+        self.vm.error = nil
+        self.vm.getData()
     }
 }

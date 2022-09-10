@@ -30,6 +30,7 @@
 		9AC9E83C28CC7C0900EDF961 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9E83B28CC7C0900EDF961 /* AppEnvironment.swift */; };
 		9AC9E83F28CC7C1D00EDF961 /* HomeSceneDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9E83E28CC7C1D00EDF961 /* HomeSceneDI.swift */; };
 		9AC9E84128CC7DA400EDF961 /* AppDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9E84028CC7DA400EDF961 /* AppDI.swift */; };
+		9AC9E84328CC913C00EDF961 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9E84228CC913C00EDF961 /* ErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		9AC9E83B28CC7C0900EDF961 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		9AC9E83E28CC7C1D00EDF961 /* HomeSceneDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneDI.swift; sourceTree = "<group>"; };
 		9AC9E84028CC7DA400EDF961 /* AppDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDI.swift; sourceTree = "<group>"; };
+		9AC9E84228CC913C00EDF961 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +326,7 @@
 			children = (
 				9AC9E83728CC7A1F00EDF961 /* TagsView.swift */,
 				9AC9E83928CC7A3700EDF961 /* ProductImageView.swift */,
+				9AC9E84228CC913C00EDF961 /* ErrorView.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				9AC9E84128CC7DA400EDF961 /* AppDI.swift in Sources */,
 				9AC9E83828CC7A1F00EDF961 /* TagsView.swift in Sources */,
 				9AC0E36C28CA55BF0071AC71 /* ProductListModel.swift in Sources */,
+				9AC9E84328CC913C00EDF961 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

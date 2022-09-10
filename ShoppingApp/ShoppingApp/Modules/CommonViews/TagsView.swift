@@ -13,34 +13,33 @@ struct TagsView: View {
         self.tags = tags
     }
     var body: some View {
-        HStack( spacing: 3) {
-            ForEach(tags ,id: \.self) { tag in
-                Text(tag)
-                    .multilineTextAlignment(.center)
-                    .lineLimit(1)
-                    .padding(EdgeInsets(top: 2, leading: 5, bottom: 2, trailing: 5))
-                    .frame(height: 20, alignment: .center)
-                    .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.948))
-                    .foregroundColor(.black)
-                    .font(.custom(
-                        "Roboto-Regular",
-                        fixedSize: 12))
-                    .frame(alignment: .leading)
+        HStack {
+            HStack( spacing: 5.0) {
+                ForEach(tags ,id: \.self) { tag in
+                    Text(tag)
+                        .font(.custom(
+                            "Roboto-Regular",
+                            fixedSize: 12))
+                        .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.948))
+                        .foregroundColor(.black)
+                }
             }
-
-            Button(action: {
-                // Do something...
-            }, label: {
-                Image(systemName: "bookmark")
-            })
-            .foregroundColor(.black)
-            .frame(alignment: .leading)
+            .padding(.leading, 5.0)
+            HStack{
+                Button(action: {
+                    // Do something...
+                }, label: {
+                    Image(systemName: "bookmark")
+                })
+                .foregroundColor(.black)
+                .alignmentGuide(.trailing) { d in d[.trailing] }
+            }
+            .frame(
+                maxWidth: .infinity,
+                maxHeight: 20,
+                alignment: .topTrailing
+            )
+            .padding()
         }
-        .frame(
-            maxWidth: .infinity,
-            maxHeight: 20,
-            alignment: .topLeading
-        )
-        .padding()
     }
 }
