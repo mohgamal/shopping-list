@@ -48,3 +48,7 @@ struct FontStyleConstants {
         }
     }
 }
+
+struct UserDefaultKeys {
+    static let wishList = "wishListKey"
+}

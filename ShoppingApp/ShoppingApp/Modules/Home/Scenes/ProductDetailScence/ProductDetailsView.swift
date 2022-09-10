@@ -12,6 +12,8 @@ struct ProductDetailsView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let product: ProductModel
     let currency: String
+    @State var isSelected : Bool = false
+
 
     init(product: ProductModel, currency: String) {
         self.product = product
@@ -30,21 +32,32 @@ struct ProductDetailsView: View {
        }
 
     var body: some View {
+        ScrollView {
         ProductCell(item: product, currency: currency, viewType: .details)
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: btnBack)
             .toolbar {
                 Button(action: {
-                    // Do something...
+                    self.isSelected.toggle()
+                    Utils.addToWishList(item: product)
+                    checkIsAddedToWIshList()
                 }, label: {
-                    Image(systemName: "bookmark")
+                    Image(systemName: self.isSelected ? "bookmark.fill": "bookmark")
                 })
                 .foregroundColor(.black)
             }
+        }
+        .onAppear(perform: {
+            checkIsAddedToWIshList()
+        })
+        .frame(maxWidth: .infinity)
     }
 
-    private func addToWishList() {
-        
+    @discardableResult
+    private func checkIsAddedToWIshList() -> Bool {
+        let status = Utils.checkItemStatus(itemId: self.product.id ?? "")
+        self.isSelected = status
+        return status
     }
 }
 

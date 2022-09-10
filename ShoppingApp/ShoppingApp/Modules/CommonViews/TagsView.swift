@@ -10,10 +10,12 @@ import SwiftUI
 struct TagsView: View {
     let tags: [String]
     let viewType: ViewType
+    let itemId: String
 
-    init (tags: [String], viewType: ViewType) {
+    init (tags: [String], viewType: ViewType, itemId: String) {
         self.tags = tags
         self.viewType = viewType
+        self.itemId = itemId
     }
     var body: some View {
         HStack {
@@ -34,7 +36,7 @@ struct TagsView: View {
                     Button(action: {
                         // Do something...
                     }, label: {
-                        Image(systemName: "bookmark")
+                        Image(systemName: Utils.checkItemStatus(itemId: self.itemId) ? "bookmark.fill" : "bookmark")
                     })
                     .foregroundColor(.black)
                     .alignmentGuide(.trailing) { d in d[.trailing] }

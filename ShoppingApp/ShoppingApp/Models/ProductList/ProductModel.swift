@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ProductModel : Codable, Identifiable {
+struct ProductModel : Codable, Identifiable, Equatable {
     let id : String?
     let sku : String?
     let image : String?
@@ -16,4 +16,5 @@ struct ProductModel : Codable, Identifiable {
     let price : Int?
     let originalPrice : Int?
     let badges : [String]?
+    let isSelected: Bool?
 }

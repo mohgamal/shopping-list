@@ -10,5 +10,5 @@ import Foundation
 struct ProductListModel: Codable {
     let title : String?
     let currency : String?
-    let items : [ProductModel]?
+    var items : [ProductModel]?
 }

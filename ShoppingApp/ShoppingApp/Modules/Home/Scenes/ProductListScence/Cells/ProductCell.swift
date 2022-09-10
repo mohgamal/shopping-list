@@ -20,7 +20,7 @@ struct ProductCell: View {
 
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
-            ProductImageView(tags: self.item.badges ?? [], imageURL: self.item.image ?? "", viewType: viewType)
+            ProductImageView(tags: self.item.badges ?? [], imageURL: self.item.image ?? "", viewType: viewType, itemId: self.item.id ?? "")
             VStack(alignment: .center, spacing: 10) {
                 Text(self.item.brand ?? "")
                     .multilineTextAlignment(.leading)

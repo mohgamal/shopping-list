@@ -12,17 +12,19 @@ struct ProductImageView: View {
     let tags: [String]
     let imageURL: String
     let viewType: ViewType
+    let itemId: String
 
-    init (tags: [String], imageURL: String, viewType: ViewType) {
+    init (tags: [String], imageURL: String, viewType: ViewType, itemId: String) {
         self.tags = tags
         self.imageURL = imageURL
         self.viewType = viewType
+        self.itemId = itemId
         imageLoader = DataLoader(resourseURL: URL(string:imageURL))
     }
 
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
-            TagsView(tags: tags, viewType: viewType)
+            TagsView(tags: tags, viewType: viewType, itemId: self.itemId)
             
             if let uiImage = UIImage(data: imageLoader.data) {
                 AnyView(Image(uiImage: uiImage)

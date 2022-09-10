@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9AAA5CF028CCD20000C3ABF9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAA5CEF28CCD20000C3ABF9 /* Utils.swift */; };
 		9AC0E36A28CA557E0071AC71 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0E36928CA557E0071AC71 /* ProductModel.swift */; };
 		9AC0E36C28CA55BF0071AC71 /* ProductListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0E36B28CA55BF0071AC71 /* ProductListModel.swift */; };
 		9AC0E36E28CA56DA0071AC71 /* ShoppingAppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0E36D28CA56DA0071AC71 /* ShoppingAppError.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9AAA5CEF28CCD20000C3ABF9 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		9AC0E36928CA557E0071AC71 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		9AC0E36B28CA55BF0071AC71 /* ProductListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListModel.swift; sourceTree = "<group>"; };
 		9AC0E36D28CA56DA0071AC71 /* ShoppingAppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppError.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				9AC0E38228CA67A20071AC71 /* DataLoader.swift */,
 				9AC9E83B28CC7C0900EDF961 /* AppEnvironment.swift */,
 				9AC9E84628CC9FDE00EDF961 /* Constants.swift */,
+				9AAA5CEF28CCD20000C3ABF9 /* Utils.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				9AC9E83828CC7A1F00EDF961 /* TagsView.swift in Sources */,
 				9AC0E36C28CA55BF0071AC71 /* ProductListModel.swift in Sources */,
 				9AC9E84328CC913C00EDF961 /* ErrorView.swift in Sources */,
+				9AAA5CF028CCD20000C3ABF9 /* Utils.swift in Sources */,
 				9AC9E84728CC9FDE00EDF961 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

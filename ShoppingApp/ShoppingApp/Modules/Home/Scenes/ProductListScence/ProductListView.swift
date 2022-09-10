@@ -40,7 +40,7 @@ struct ProductListView: View {
                         Button(action: {
                             // Do something...
                         }, label: {
-                            Image(systemName: "bookmark")
+                            Image(systemName:  "bookmark")
                         })
                         .foregroundColor(.black)
                     }
@@ -53,10 +53,9 @@ struct ProductListView: View {
             .frame(maxWidth: .infinity)
             .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(hue: 1.0, saturation: 0.002, brightness: 0.944)/*@END_MENU_TOKEN@*/)
         }
-
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
-            self.vm.getData()
+            reloadData()
         }
     }
 
