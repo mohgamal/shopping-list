@@ -65,6 +65,23 @@ struct ProductCell: View {
                 }
             }
             .padding()
+
+            if viewType == .details {
+                Button(action:  {
+
+                })  {
+                    Text("ADD TO BAG")
+                        .fontWeight(.semibold)
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .border(Color.black)
+                        .background(Color.black)
+                        .cornerRadius(5)
+                        .padding()
+                }
+            }
         }
     }
 }
