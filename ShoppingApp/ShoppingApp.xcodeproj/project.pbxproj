@@ -15,12 +15,18 @@
 		9AC0E37C28CA60840071AC71 /* NavigationBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0E37B28CA60840071AC71 /* NavigationBarConfigurator.swift */; };
 		9AC0E37E28CA60A40071AC71 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0E37D28CA60A40071AC71 /* ProductListView.swift */; };
 		9AC0E38128CA62CB0071AC71 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0E38028CA62CB0071AC71 /* ProductCell.swift */; };
+		9AC0E38328CA67A20071AC71 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0E38228CA67A20071AC71 /* DataLoader.swift */; };
+		9AC0E38928CA6BB20071AC71 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9AC0E38628CA6BB20071AC71 /* Roboto-Regular.ttf */; };
+		9AC0E38A28CA6BB20071AC71 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9AC0E38728CA6BB20071AC71 /* Roboto-Bold.ttf */; };
+		9AC0E38B28CA6BB20071AC71 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9AC0E38828CA6BB20071AC71 /* Roboto-Black.ttf */; };
 		9AC1210828C9C46300075625 /* ShoppingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1210728C9C46300075625 /* ShoppingAppApp.swift */; };
 		9AC1210C28C9C46400075625 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AC1210B28C9C46400075625 /* Assets.xcassets */; };
 		9AC1210F28C9C46400075625 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AC1210E28C9C46400075625 /* Preview Assets.xcassets */; };
 		9AC1211928C9C46500075625 /* ShoppingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1211828C9C46500075625 /* ShoppingAppTests.swift */; };
 		9AC1212328C9C46500075625 /* ShoppingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1212228C9C46500075625 /* ShoppingAppUITests.swift */; };
 		9AC1212528C9C46500075625 /* ShoppingAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC1212428C9C46500075625 /* ShoppingAppUITestsLaunchTests.swift */; };
+		9AC9E83828CC7A1F00EDF961 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9E83728CC7A1F00EDF961 /* TagsView.swift */; };
+		9AC9E83A28CC7A3700EDF961 /* ProductImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9E83928CC7A3700EDF961 /* ProductImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,10 @@
 		9AC0E37B28CA60840071AC71 /* NavigationBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarConfigurator.swift; sourceTree = "<group>"; };
 		9AC0E37D28CA60A40071AC71 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		9AC0E38028CA62CB0071AC71 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		9AC0E38228CA67A20071AC71 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		9AC0E38628CA6BB20071AC71 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		9AC0E38728CA6BB20071AC71 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		9AC0E38828CA6BB20071AC71 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		9AC1210428C9C46300075625 /* ShoppingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC1210728C9C46300075625 /* ShoppingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppApp.swift; sourceTree = "<group>"; };
 		9AC1210B28C9C46400075625 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +69,8 @@
 		9AC1212228C9C46500075625 /* ShoppingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppUITests.swift; sourceTree = "<group>"; };
 		9AC1212428C9C46500075625 /* ShoppingAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9AC1213128C9C47700075625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AC9E83728CC7A1F00EDF961 /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		9AC9E83928CC7A3700EDF961 /* ProductImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +110,7 @@
 		9AC0E36328CA54CB0071AC71 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9AC0E38428CA6BB20071AC71 /* Fonts */,
 				9AC1210B28C9C46400075625 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -114,6 +127,7 @@
 		9AC0E36528CA55340071AC71 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9AC9E83628CC7A0F00EDF961 /* CommonViews */,
 				9AC0E37328CA57960071AC71 /* WishList */,
 				9AC0E37128CA577F0071AC71 /* Home */,
 			);
@@ -125,6 +139,7 @@
 			children = (
 				9AC0E36D28CA56DA0071AC71 /* ShoppingAppError.swift */,
 				9AC0E37B28CA60840071AC71 /* NavigationBarConfigurator.swift */,
+				9AC0E38228CA67A20071AC71 /* DataLoader.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -219,6 +234,24 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		9AC0E38428CA6BB20071AC71 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9AC0E38528CA6BB20071AC71 /* Roboto */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9AC0E38528CA6BB20071AC71 /* Roboto */ = {
+			isa = PBXGroup;
+			children = (
+				9AC0E38628CA6BB20071AC71 /* Roboto-Regular.ttf */,
+				9AC0E38728CA6BB20071AC71 /* Roboto-Bold.ttf */,
+				9AC0E38828CA6BB20071AC71 /* Roboto-Black.ttf */,
+			);
+			path = Roboto;
+			sourceTree = "<group>";
+		};
 		9AC120FB28C9C46300075625 = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +309,15 @@
 				9AC1212428C9C46500075625 /* ShoppingAppUITestsLaunchTests.swift */,
 			);
 			path = ShoppingAppUITests;
+			sourceTree = "<group>";
+		};
+		9AC9E83628CC7A0F00EDF961 /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				9AC9E83728CC7A1F00EDF961 /* TagsView.swift */,
+				9AC9E83928CC7A3700EDF961 /* ProductImageView.swift */,
+			);
+			path = CommonViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,7 +424,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC0E38928CA6BB20071AC71 /* Roboto-Regular.ttf in Resources */,
 				9AC1210F28C9C46400075625 /* Preview Assets.xcassets in Resources */,
+				9AC0E38B28CA6BB20071AC71 /* Roboto-Black.ttf in Resources */,
+				9AC0E38A28CA6BB20071AC71 /* Roboto-Bold.ttf in Resources */,
 				9AC1210C28C9C46400075625 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC0E38328CA67A20071AC71 /* DataLoader.swift in Sources */,
 				9AC0E36E28CA56DA0071AC71 /* ShoppingAppError.swift in Sources */,
 				9AC0E37C28CA60840071AC71 /* NavigationBarConfigurator.swift in Sources */,
 				9AC0E36A28CA557E0071AC71 /* ProductModel.swift in Sources */,
@@ -415,7 +461,9 @@
 				9AC0E37828CA58300071AC71 /* ProductListService.swift in Sources */,
 				9AC0E37E28CA60A40071AC71 /* ProductListView.swift in Sources */,
 				9AC0E38128CA62CB0071AC71 /* ProductCell.swift in Sources */,
+				9AC9E83A28CC7A3700EDF961 /* ProductImageView.swift in Sources */,
 				9AC1210828C9C46300075625 /* ShoppingAppApp.swift in Sources */,
+				9AC9E83828CC7A1F00EDF961 /* TagsView.swift in Sources */,
 				9AC0E36C28CA55BF0071AC71 /* ProductListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
