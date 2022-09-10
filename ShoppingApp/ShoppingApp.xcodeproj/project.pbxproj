@@ -31,6 +31,7 @@
 		9AC9E83F28CC7C1D00EDF961 /* HomeSceneDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9E83E28CC7C1D00EDF961 /* HomeSceneDI.swift */; };
 		9AC9E84128CC7DA400EDF961 /* AppDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9E84028CC7DA400EDF961 /* AppDI.swift */; };
 		9AC9E84328CC913C00EDF961 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9E84228CC913C00EDF961 /* ErrorView.swift */; };
+		9AC9E84528CC95C000EDF961 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC9E84428CC95C000EDF961 /* ProductDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		9AC9E83E28CC7C1D00EDF961 /* HomeSceneDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneDI.swift; sourceTree = "<group>"; };
 		9AC9E84028CC7DA400EDF961 /* AppDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDI.swift; sourceTree = "<group>"; };
 		9AC9E84228CC913C00EDF961 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		9AC9E84428CC95C000EDF961 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 		9AC0E37028CA57690071AC71 /* ProductDetailScence */ = {
 			isa = PBXGroup;
 			children = (
+				9AC9E84428CC95C000EDF961 /* ProductDetailsView.swift */,
 			);
 			path = ProductDetailScence;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				9AC0E37E28CA60A40071AC71 /* ProductListView.swift in Sources */,
 				9AC0E38128CA62CB0071AC71 /* ProductCell.swift in Sources */,
 				9AC9E83C28CC7C0900EDF961 /* AppEnvironment.swift in Sources */,
+				9AC9E84528CC95C000EDF961 /* ProductDetailsView.swift in Sources */,
 				9AC9E83A28CC7A3700EDF961 /* ProductImageView.swift in Sources */,
 				9AC1210828C9C46300075625 /* ShoppingAppApp.swift in Sources */,
 				9AC9E84128CC7DA400EDF961 /* AppDI.swift in Sources */,

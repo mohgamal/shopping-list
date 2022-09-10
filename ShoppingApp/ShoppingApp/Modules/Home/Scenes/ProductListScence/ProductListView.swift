@@ -11,7 +11,7 @@ import SwiftUI
 struct ProductListView: View {
     var appDI: AppDIInterface
     @ObservedObject public var vm: ProductListViewModel
-
+   
     init (appDI: AppDIInterface, vm: ProductListViewModel) {
         self.appDI = appDI
         self.vm = vm
@@ -30,7 +30,9 @@ struct ProductListView: View {
                 } else {
                     LazyVGrid(columns:  columns, spacing: 20) {
                         ForEach(vm.productResult?.items ?? [], id: \.id) { item in
-                            ProductCell(item: item, currency: vm.productResult?.currency ?? "")
+                            NavigationLink(destination: ProductDetailsView()) {
+                                ProductCell(item: item, currency: vm.productResult?.currency ?? "")
+                            }
                         }
                     }.padding()
                     .toolbar {
