@@ -11,9 +11,11 @@ import SwiftUI
 struct WishListView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject public var vm: WishListViewModel
+    let currency: String
 
-    init (vm: WishListViewModel) {
+    init (vm: WishListViewModel, currency: String) {
         self.vm = vm
+        self.currency = currency
     }
 
     var body: some View {
@@ -22,7 +24,7 @@ struct WishListView: View {
                 VStack {
                     ForEach(vm.wishList, id: \.id) { product in
                         VStack {
-                            WishListProductCell(product: product)
+                            WishListProductCell(product: product, currency: currency)
                             Button(action: {
                                 vm.removeProductFromWIshList(id: product.id ?? "")
                             }, label: {

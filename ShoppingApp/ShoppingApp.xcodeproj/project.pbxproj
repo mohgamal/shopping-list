@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A236D0128CDE97C003BA499 /* WishListProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A236D0028CDE97C003BA499 /* WishListProductCell.swift */; };
+		9A236D0328CDEA92003BA499 /* WishListProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A236D0228CDEA92003BA499 /* WishListProductCell.swift */; };
 		9AC0E36A28CA557E0071AC71 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0E36928CA557E0071AC71 /* ProductModel.swift */; };
 		9AC0E36C28CA55BF0071AC71 /* ProductListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0E36B28CA55BF0071AC71 /* ProductListModel.swift */; };
 		9AC0E36E28CA56DA0071AC71 /* ShoppingAppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0E36D28CA56DA0071AC71 /* ShoppingAppError.swift */; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		9A236D0028CDE97C003BA499 /* WishListProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListProductCell.swift; sourceTree = "<group>"; };
+		9A236D0228CDEA92003BA499 /* WishListProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListProductCell.swift; sourceTree = "<group>"; };
 		9AC0E36928CA557E0071AC71 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		9AC0E36B28CA55BF0071AC71 /* ProductListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListModel.swift; sourceTree = "<group>"; };
 		9AC0E36D28CA56DA0071AC71 /* ShoppingAppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingAppError.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 		9ACB809A28CDDF2D00BACCCB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9A236D0228CDEA92003BA499 /* WishListProductCell.swift */,
 				9A236D0028CDE97C003BA499 /* WishListProductCell.swift */,
 			);
 			path = Cells;
@@ -538,6 +541,7 @@
 				9ACB808F28CCF97100BACCCB /* UserDefaultsWrapper.swift in Sources */,
 				9AC9E84328CC913C00EDF961 /* ErrorView.swift in Sources */,
 				9A236D0128CDE97C003BA499 /* WishListProductCell.swift in Sources */,
+				9A236D0328CDEA92003BA499 /* WishListProductCell.swift in Sources */,
 				9ACB809128CCFC1600BACCCB /* WishListManager.swift in Sources */,
 				9AC9E84728CC9FDE00EDF961 /* Constants.swift in Sources */,
 				9ACB809728CD0A6B00BACCCB /* WishListView.swift in Sources */,

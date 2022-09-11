@@ -11,10 +11,11 @@ import SwiftUI
 struct WishListProductCell: View {
     @ObservedObject private var imageLoader: DataLoader
     let product: ProductModel
-let currency = "AED"
+    let currency: String
 
-    init (product: ProductModel) {
+    init (product: ProductModel, currency: String) {
         self.product = product
+        self.currency = currency
         imageLoader = DataLoader(resourseURL: URL(string: product.image ?? ""))
     }
     var body: some View {

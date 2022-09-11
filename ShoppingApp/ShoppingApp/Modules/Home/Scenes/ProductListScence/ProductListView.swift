@@ -50,7 +50,7 @@ struct ProductListView: View {
                                     .frame(width: 25, height:25)
                             })
                             .fullScreenCover(isPresented: $isPresented, content: {
-                                WishListView(vm: appDI.wishListDependecies())
+                                WishListView(vm: appDI.wishListDependecies(), currency: vm.productResult?.currency ?? "")
                             })
 
                             .foregroundColor(.black)
