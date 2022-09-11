@@ -12,7 +12,6 @@ struct WishListView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject public var vm: WishListViewModel = WishListViewModel(wishListManager: WishListManager())
 
-
     var body: some View {
         NavigationView {
             ScrollView {
