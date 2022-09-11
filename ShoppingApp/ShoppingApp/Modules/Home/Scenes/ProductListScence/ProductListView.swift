@@ -49,7 +49,9 @@ struct ProductListView: View {
                                     .resizable()
                                     .frame(width: 25, height:25)
                             })
-                            .fullScreenCover(isPresented: $isPresented, content: WishListView.init)
+                            .fullScreenCover(isPresented: $isPresented, content: {
+                                WishListView(vm: appDI.wishListDependecies())
+                            })
 
                             .foregroundColor(.black)
                         }

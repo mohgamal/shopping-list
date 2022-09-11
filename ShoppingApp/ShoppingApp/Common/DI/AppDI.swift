@@ -10,6 +10,7 @@ import Foundation
 protocol AppDIInterface {
     func productListDependecies() -> ProductListViewModel
     func productDetailsDependecies() -> ProductDetailsViewModel
+    func wishListDependecies() -> WishListViewModel
 }
 
 
@@ -35,6 +36,12 @@ class AppDI: AppDIInterface {
 
         let productDetailsVM = ProductDetailsViewModel(wishListManager: wishListManager, cartManager: cartManager)
         return productDetailsVM
+    }
+
+    func wishListDependecies() -> WishListViewModel {
+        let wishListManager = WishListManager()
+        let wishListVM = WishListViewModel(wishListManager: wishListManager)
+        return wishListVM
     }
 }
 

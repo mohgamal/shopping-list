@@ -10,7 +10,11 @@ import SwiftUI
 
 struct WishListView: View {
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject public var vm: WishListViewModel = WishListViewModel(wishListManager: WishListManager())
+    @ObservedObject public var vm: WishListViewModel
+
+    init (vm: WishListViewModel) {
+        self.vm = vm
+    }
 
     var body: some View {
         NavigationView {

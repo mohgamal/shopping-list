@@ -11,7 +11,7 @@ import SwiftUI
 struct WishListProductCell: View {
     @ObservedObject private var imageLoader: DataLoader
     let product: ProductModel
-let currency = "AED"
+    let currency = "AED"
 
     init (product: ProductModel) {
         self.product = product
