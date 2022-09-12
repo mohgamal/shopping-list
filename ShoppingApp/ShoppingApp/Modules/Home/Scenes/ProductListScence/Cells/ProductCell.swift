@@ -40,7 +40,7 @@ struct ProductCell: View {
                     .font(.custom(
                         "Roboto-Regular",
                         fixedSize: FontStyleConstants.init(viewType: viewType).title))
-
+                    .minimumScaleFactor(0.8)
                 HStack {
                     if let originalPrice = self.item.originalPrice {
                         Text("\(self.item.price ?? 0) \(self.currency)")

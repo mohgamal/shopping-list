@@ -36,7 +36,7 @@ struct ProductListView: View {
                                 ProductCell(item: item,
                                             currency: vm.productResult?.currency ?? "",
                                             viewType: .cell)
-                                .frame(height: 350)
+                                .frame(height: 320)
                             }
                         }
                     }.padding()

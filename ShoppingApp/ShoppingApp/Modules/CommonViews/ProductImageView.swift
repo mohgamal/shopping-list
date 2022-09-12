@@ -39,8 +39,10 @@ struct ProductImageView: View {
                     .onAppear(perform: { imageLoader.loadImage() }))
                 .background(Color(UIColor.white))
             }
+
+            Spacer()
         }
-        .frame(maxWidth: .infinity, minHeight: 200)
+        .frame(height: 200)
         .cornerRadius(20)
         .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(hue: 1.0, saturation: 0.0, brightness: 1.0)/*@END_MENU_TOKEN@*/)
     }
