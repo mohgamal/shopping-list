@@ -8,40 +8,32 @@
 import SwiftUI
 
 struct TagsView: View {
-    let product: ProductModel
-    let viewType: ViewType
-    let wishListManager: WishListManager
+    @ObservedObject public var vm: TagsViewModel
 
-    @State var isSelected : Bool = false
-    
-    init (product: ProductModel, viewType: ViewType, wishListManager: WishListManager) {
-        self.product = product
-        self.viewType = viewType
-        self.wishListManager = wishListManager
+    init (vm: TagsViewModel) {
+        self.vm = vm
     }
     
     var body: some View {
         HStack {
             HStack( spacing: 5.0) {
-                ForEach(product.badges ?? [] ,id: \.self) { tag in
+                ForEach(vm.product.badges ?? [] ,id: \.self) { tag in
                     Text(tag)
                         .font(.custom(
                             "Roboto-Regular",
-                            fixedSize: FontStyleConstants.init(viewType: viewType).subTitle))
+                            fixedSize: FontStyleConstants.init(viewType: vm.viewType).subTitle))
                         .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.948))
                         .foregroundColor(.black)
                 }
             }
             .padding(.leading, 5.0)
 
-            if viewType == .cell {
+            if vm.viewType == .cell {
                 HStack{
                     Button(action: {
-                        self.isSelected.toggle()
-                        wishListManager.add(product: product)
-                        checkIsAddedToWIshList()
+                        vm.addToWishList()
                     }, label: {
-                        Image(systemName: self.isSelected ? "bookmark.fill" : "bookmark")
+                        Image(systemName: self.vm.isAddedToWishList ? "bookmark.fill" : "bookmark")
                             .resizable()
                             .frame(width: 25, height: 25)
                     })
@@ -53,19 +45,8 @@ struct TagsView: View {
                     maxHeight: 20,
                     alignment: .topTrailing
                 )
-                .onAppear(perform:  {
-                    checkIsAddedToWIshList()
-                })
                 .padding()
             }
-
         }
-    }
-
-    @discardableResult
-    private func checkIsAddedToWIshList() -> Bool {
-        let status = wishListManager.checkStatus(id: self.product.id ?? "")
-        self.isSelected = status
-        return status
     }
 }

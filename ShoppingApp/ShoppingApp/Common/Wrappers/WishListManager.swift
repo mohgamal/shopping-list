@@ -9,6 +9,9 @@ import Foundation
 
 final class WishListManager: UserDefaultWrapperInterface {
 
+    @Published private(set) var products: [ProductModel] = []
+    static let shared = WishListManager()
+
     @discardableResult
     func add(product: ProductModel) -> Bool {
         var wishList: [ProductModel] = []
@@ -30,6 +33,8 @@ final class WishListManager: UserDefaultWrapperInterface {
         }
 
         UserDefaults.standard.set( try? PropertyListEncoder().encode(wishList), forKey: UserDefaultKeys.wishList)
+
+        self.products = wishList
         return added
     }
 
@@ -42,6 +47,7 @@ final class WishListManager: UserDefaultWrapperInterface {
                 UserDefaults.standard.set( try? PropertyListEncoder().encode(wishList), forKey: UserDefaultKeys.wishList)
             }
         }
+        self.products = wishList
         return wishList
     }
 
@@ -50,6 +56,7 @@ final class WishListManager: UserDefaultWrapperInterface {
         if let wishListResult = UserDefaults.standard.object(forKey: UserDefaultKeys.wishList) as? Data {
             if let wishListWrapped = try?  PropertyListDecoder().decode([ProductModel].self, from: wishListResult) {
                 wishList = wishListWrapped
+                self.products = wishList
                 if wishList.contains(where: { $0.id == id}) {
                     return true
                 }
@@ -62,6 +69,7 @@ final class WishListManager: UserDefaultWrapperInterface {
     func getList() -> [ProductModel] {
         if let wishListResult = UserDefaults.standard.object(forKey: UserDefaultKeys.wishList) as? Data {
             if let wishList = try?  PropertyListDecoder().decode([ProductModel].self, from: wishListResult) {
+                self.products = wishList
                 return wishList
             }
         }

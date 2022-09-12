@@ -6,29 +6,47 @@
 //
 
 import Foundation
+import Combine
+
 class ProductDetailsViewModel: ObservableObject {
-    let wishListManager: WishListManager
-    let cartManager: CartManager
 
     @Published var isAddedToWishList: Bool = false
     @Published var isAddedToCart: Bool = false
 
-    init (wishListManager: WishListManager, cartManager: CartManager) {
-        self.wishListManager = wishListManager
-        self.cartManager = cartManager
+    let product: ProductModel
+    let currency: String
+    var cancellables = Set<AnyCancellable>()
+
+    init ( product: ProductModel, currency: String) {
+        self.product = product
+        self.currency = currency
+        checkIsAddedToCart()
+        checkIsAddedToWishList()
     }
 
-    @discardableResult
-    func checkIsAddedToWishList(itemId: String) -> Bool {
-        let status = wishListManager.checkStatus(id: itemId)
-        self.isAddedToWishList = status
-        return status
+    func checkIsAddedToWishList() {
+        AppEnvironment.wishListManager.$products.sink { [weak self] bookmarkedProducts in
+            guard let self = self else { return }
+            self.isAddedToWishList = Set(bookmarkedProducts.compactMap(\.id)).contains(self.product.id)
+
+        }.store(in: &cancellables)
     }
 
-    @discardableResult
-    func checkIsAddedToCart(itemId: String) -> Bool {
-        let status = cartManager.checkStatus(id: itemId)
-        self.isAddedToCart = status
-        return status
+    func checkIsAddedToCart() {
+        AppEnvironment.cartManager.$products.sink { [weak self] cartProducts in
+            guard let self = self else { return }
+            self.isAddedToCart = Set(cartProducts.compactMap(\.id)).contains(self.product.id)
+
+        }.store(in: &cancellables)
+    }
+
+    func addToWishList() {
+        let isAdded = AppEnvironment.wishListManager.add(product: self.product)
+        self.isAddedToWishList = isAdded
+    }
+
+    func addToCart() {
+        let isAdded = AppEnvironment.cartManager.add(product: self.product)
+        self.isAddedToCart = isAdded
     }
 }

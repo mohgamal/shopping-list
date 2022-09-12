@@ -12,14 +12,8 @@ struct ProductDetailsView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject public var vm: ProductDetailsViewModel
 
-    let product: ProductModel
-    let currency: String
-
-
-    init(vm: ProductDetailsViewModel, product: ProductModel, currency: String) {
+    init(vm: ProductDetailsViewModel) {
         self.vm = vm
-        self.product = product
-        self.currency = currency
     }
 
     var btnBack : some View { Button(action: {
@@ -37,15 +31,11 @@ struct ProductDetailsView: View {
 
     var body: some View {
         ScrollView {
-            ProductCell(item: product,
-                        currency: currency,
-                        viewType: .details,
-                        wishListManager: vm.wishListManager,
-                        cartManager: vm.cartManager)
+            ProductCell(item: vm.product,
+                        currency: vm.currency,
+                        viewType: .details)
                 Button(action:  {
-                    self.vm.isAddedToCart.toggle()
-                    self.vm.cartManager.add(product: self.product)
-                    self.vm.checkIsAddedToCart(itemId: self.product.id ?? "")
+                    vm.addToCart()
                 })  {
                     Text("ADD TO BAG")
                         .fontWeight(.semibold)
@@ -62,9 +52,7 @@ struct ProductDetailsView: View {
             .navigationBarItems(leading: btnBack)
             .toolbar {
                 Button(action: {
-                    vm.isAddedToWishList.toggle()
-                    vm.wishListManager.add(product: product)
-                    vm.checkIsAddedToWishList(itemId: self.product.id ?? "")
+                    vm.addToWishList()
                 }, label: {
                     Image(systemName: vm.isAddedToWishList ? "bookmark.fill": "bookmark")
                         .resizable()
@@ -74,10 +62,6 @@ struct ProductDetailsView: View {
             }
         }
         .padding()
-        .onAppear(perform: {
-            vm.checkIsAddedToWishList(itemId: self.product.id ?? "")
-            vm.checkIsAddedToCart(itemId: self.product.id ?? "")
-        })
         .frame(maxWidth: .infinity)
     }
 }

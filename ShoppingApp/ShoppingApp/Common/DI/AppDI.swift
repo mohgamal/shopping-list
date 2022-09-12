@@ -9,38 +9,32 @@ import Foundation
 
 protocol AppDIInterface {
     func productListDependecies() -> ProductListViewModel
-    func productDetailsDependecies() -> ProductDetailsViewModel
+    //func productDetailsDependecies() -> ProductDetailsViewModel
     func wishListDependecies() -> WishListViewModel
 }
 
 
 class AppDI: AppDIInterface {
 
-    static let shared = AppDI(appEnvironment: AppEnvironment())
+    static let shared = AppDI()
 
-    let appEnvironment: AppEnvironment
 
-    init (appEnvironment: AppEnvironment) {
-        self.appEnvironment = appEnvironment
+    init () {
     }
 
     func productListDependecies() -> ProductListViewModel {
-        let productListDI = HomeSceneDI(appEnvironment: appEnvironment)
+        let productListDI = HomeSceneDI()
         let productListVM = productListDI.productListDependecies()
         return productListVM
     }
-
-    func productDetailsDependecies() -> ProductDetailsViewModel {
-        let wishListManager = WishListManager()
-        let cartManager = CartManager()
-
-        let productDetailsVM = ProductDetailsViewModel(wishListManager: wishListManager, cartManager: cartManager)
-        return productDetailsVM
-    }
+//
+//    func productDetailsDependecies() -> ProductDetailsViewModel {
+//        let productDetailsVM = ProductDetailsViewModel()
+//        return productDetailsVM
+//    }
 
     func wishListDependecies() -> WishListViewModel {
-        let wishListManager = WishListManager()
-        let wishListVM = WishListViewModel(wishListManager: wishListManager)
+        let wishListVM = WishListViewModel()
         return wishListVM
     }
 }

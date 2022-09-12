@@ -9,19 +9,16 @@ import Foundation
 
 class WishListViewModel: ObservableObject {
     @Published var wishList: [ProductModel] = []
-    let wishListManager: WishListManager
 
-    init (wishListManager: WishListManager) {
-        self.wishListManager = wishListManager
+    init() {
+        getWishListProducts()
     }
 
     func getWishListProducts() {
-        wishList = wishListManager.getList()
-        self.objectWillChange.send()
+        wishList = AppEnvironment.wishListManager.getList()
     }
 
-    func removeProductFromWIshList(id: String) {
-        wishList = wishListManager.remove(id: id)
-        self.objectWillChange.send()
+    func removeProductFromWishList(id: String) {
+        wishList = AppEnvironment.wishListManager.remove(id: id)
     }
 }

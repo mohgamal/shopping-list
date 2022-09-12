@@ -8,6 +8,8 @@
 import Foundation
 
 final class CartManager: UserDefaultWrapperInterface {
+    @Published private(set) var products: [ProductModel] = []
+    static let shared = CartManager()
 
     @discardableResult
     func add(product: ProductModel) -> Bool {
@@ -29,6 +31,8 @@ final class CartManager: UserDefaultWrapperInterface {
             added = true
         }
 
+        self.products = cartList
+
         UserDefaults.standard.set( try? PropertyListEncoder().encode(cartList), forKey: UserDefaultKeys.cart)
         return added
     }
@@ -39,6 +43,7 @@ final class CartManager: UserDefaultWrapperInterface {
         if let cartListResult = UserDefaults.standard.object(forKey: UserDefaultKeys.cart) as? Data {
             if let cartListWrapped = try?  PropertyListDecoder().decode([ProductModel].self, from: cartListResult) {
                 cartList = cartListWrapped
+                self.products = cartList
                 if cartList.contains(where: { $0.id == id}) {
                     return true
                 }

@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import Combine
 
 class ProductListViewModel: ObservableObject {
     @Published var loading = true
     @Published var productResult: ProductListModel?
+
     let prouctListService: ProductListServiceInterface
     let wishListManager: WishListManager
     let cartManager: CartManager
@@ -23,6 +25,7 @@ class ProductListViewModel: ObservableObject {
         self.wishListManager = wishListManager
         self.cartManager = cartManager
     }
+
     
     func getData() {
         self.loading = true

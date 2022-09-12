@@ -26,9 +26,8 @@ struct WishListView: View {
                         VStack {
                             WishListProductCell(product: product, currency: currency)
                             Button(action: {
-                                vm.removeProductFromWIshList(id: product.id ?? "")
+                                vm.removeProductFromWishList(id: product.id ?? "")
                             }, label: {
-
                                 Image(systemName:  "trash")
                                     .resizable()
                                     .frame(width: 25, height: 25)
@@ -58,12 +57,5 @@ struct WishListView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .onAppear {
-            reloadData()
-        }
-    }
-
-    private func reloadData() {
-        self.vm.getWishListProducts()
     }
 }

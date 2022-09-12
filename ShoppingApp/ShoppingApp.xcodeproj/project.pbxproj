@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A0818A828CF321700125FC8 /* TagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0818A728CF321700125FC8 /* TagsViewModel.swift */; };
 		9A236D0728CDEB24003BA499 /* WishListProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A236D0628CDEB24003BA499 /* WishListProductCell.swift */; };
 		9AC0E36A28CA557E0071AC71 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0E36928CA557E0071AC71 /* ProductModel.swift */; };
 		9AC0E36C28CA55BF0071AC71 /* ProductListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC0E36B28CA55BF0071AC71 /* ProductListModel.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A0818A728CF321700125FC8 /* TagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewModel.swift; sourceTree = "<group>"; };
 		9A236D0628CDEB24003BA499 /* WishListProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListProductCell.swift; sourceTree = "<group>"; };
 		9AC0E36928CA557E0071AC71 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		9AC0E36B28CA55BF0071AC71 /* ProductListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListModel.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				9AC9E83728CC7A1F00EDF961 /* TagsView.swift */,
 				9AC9E83928CC7A3700EDF961 /* ProductImageView.swift */,
 				9AC9E84228CC913C00EDF961 /* ErrorView.swift */,
+				9A0818A728CF321700125FC8 /* TagsViewModel.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				9AC0E37C28CA60840071AC71 /* NavigationBarConfigurator.swift in Sources */,
 				9ACB809328CCFD9600BACCCB /* CartManager.swift in Sources */,
 				9AC0E36A28CA557E0071AC71 /* ProductModel.swift in Sources */,
+				9A0818A828CF321700125FC8 /* TagsViewModel.swift in Sources */,
 				9AC0E37A28CA59AC0071AC71 /* ProductListViewModel.swift in Sources */,
 				9AC0E37828CA58300071AC71 /* ProductListService.swift in Sources */,
 				9AC9E83F28CC7C1D00EDF961 /* HomeSceneDI.swift in Sources */,

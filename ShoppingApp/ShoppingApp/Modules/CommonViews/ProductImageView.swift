@@ -11,18 +11,16 @@ struct ProductImageView: View {
     @ObservedObject private var imageLoader: DataLoader
     let product: ProductModel
     let viewType: ViewType
-    let wishListManager: WishListManager
 
-    init (product: ProductModel, viewType: ViewType, wishListManager: WishListManager) {
+    init (product: ProductModel, viewType: ViewType) {
         self.product = product
         self.viewType = viewType
-        self.wishListManager = wishListManager
         imageLoader = DataLoader(resourseURL: URL(string: product.image ?? ""))
     }
 
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
-            TagsView(product: product, viewType: viewType, wishListManager: wishListManager)
+            TagsView(vm: TagsViewModel(product: product, viewType: viewType))
                 .frame(maxWidth: .infinity, alignment: .topLeading)
             if let uiImage = UIImage(data: imageLoader.data) {
                 AnyView(Image(uiImage: uiImage)
