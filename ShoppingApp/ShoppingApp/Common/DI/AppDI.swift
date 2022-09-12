@@ -9,7 +9,7 @@ import Foundation
 
 protocol AppDIInterface {
     func productListDependecies() -> ProductListViewModel
-    //func productDetailsDependecies() -> ProductDetailsViewModel
+    func productDetailsDependecies(product: ProductModel, currency: String) -> ProductDetailsViewModel
     func wishListDependecies() -> WishListViewModel
 }
 
@@ -27,11 +27,11 @@ class AppDI: AppDIInterface {
         let productListVM = productListDI.productListDependecies()
         return productListVM
     }
-//
-//    func productDetailsDependecies() -> ProductDetailsViewModel {
-//        let productDetailsVM = ProductDetailsViewModel()
-//        return productDetailsVM
-//    }
+
+    func productDetailsDependecies(product: ProductModel, currency: String) -> ProductDetailsViewModel {
+        let productDetailsVM = ProductDetailsViewModel(product: product, currency: currency)
+        return productDetailsVM
+    }
 
     func wishListDependecies() -> WishListViewModel {
         let wishListVM = WishListViewModel()
