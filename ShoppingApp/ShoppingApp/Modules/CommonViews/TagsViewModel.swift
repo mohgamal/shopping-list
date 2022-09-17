@@ -17,13 +17,17 @@ class TagsViewModel: ObservableObject {
     init(product: ProductModel, viewType: ViewType) {
         self.product = product
         self.viewType = viewType
+        self.isAddedToWishList = AppEnvironment.wishListManager.checkStatus(id: product.id ?? "")
         checkIsAddedToWishList()
     }
 
     func checkIsAddedToWishList() {
         AppEnvironment.wishListManager.$products.sink { [weak self] bookmarkedProducts in
             guard let self = self else { return }
-            self.isAddedToWishList = Set(bookmarkedProducts.compactMap(\.id)).contains(self.product.id)
+            DispatchQueue.main.async {
+                self.isAddedToWishList = Set(bookmarkedProducts.compactMap(\.id)).contains(self.product.id)
+            }
+
 
         }.store(in: &cancellables)
     }

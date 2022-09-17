@@ -48,6 +48,7 @@ class ProductListService: ProductListServiceInterface {
                 if let error = error {
                     handler(.failure(ShoppingAppError.GenericError(message: error.localizedDescription)))
                 }
+                //add errors
                 return
             }
 

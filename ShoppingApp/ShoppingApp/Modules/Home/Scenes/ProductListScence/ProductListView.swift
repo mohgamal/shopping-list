@@ -12,7 +12,6 @@ struct ProductListView: View {
     var appDI: AppDIInterface
     @ObservedObject public var vm: ProductListViewModel
     @State private var isPresented = false
-//    @EnvironmentObject
 
     init (appDI: AppDIInterface, vm: ProductListViewModel) {
         self.appDI = appDI
